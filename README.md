@@ -1,15 +1,15 @@
-# AI-predictor of immunotherapy response. 
+# AI-predictor of  properties of transporters in the human placenta and lactating mammary epithelium.![image](https://user-images.githubusercontent.com/1657400/201537558-81369f04-f208-4915-aabe-379c9a9ebaf2.png)
+ 
 
-*Authors: Avinash Das Sahu, Keith Flaherty and X. Shiley Liu 
+*Authors: Avinash Sahu
 
 ## Description 
 
-DeepImmune is an AI predictor that employs drug-induced transcriptomic changes to identify drugs that synergize with immune check blockade (ICB) and prioritize them for clinical trials.
-The parameters of DeepImmune are trained on 40,000 patients tumors. It uses transfer learning to predict response to ICB. Then it implement a pertubation model to estimate effect of drugs on ICB response. 
+DeepTransporter is an AI predictor that employs structural features of transporters and substrates to predict substrate of any given transporter. We intend to model kinetic characterics of each substrate-transporter pair using the model. 
+The repository supports suites of the software generated for ..... 
+
 
 The pytorch package is based on [tutorials](https://cs230-stanford.github.io/project-starter-code.html).
-
-Note: all scripts must be run in folder `pytorch/vision`.
 
 ## Requirements
 
@@ -23,35 +23,6 @@ pip install -r requirements.txt
 
 When you're done working on the project, deactivate the virtual environment with `deactivate`.
 
-## Task
-
-Given the immunotherapy and non-immunotherapy training data predict immunotherapy response using transfer learning.  
-
-## Download the SIGNS dataset
-
-For the vision example, we will used the SIGNS dataset created for this class. The dataset is hosted on google drive, download it [here][SIGNS].
-
-This will download the SIGNS dataset (~1.1 GB) containing photos of hands signs making numbers between 0 and 5.
-Here is the structure of the data:
-```
-SIGNS/
-    train_signs/
-        0_IMG_5864.jpg
-        ...
-    test_signs/
-        0_IMG_5942.jpg
-        ...
-```
-
-The images are named following `{label}_IMG_{id}.jpg` where the label is in `[0, 5]`.
-The training set contains 1,080 images and the test set contains 120 images.
-
-Once the download is complete, move the dataset into `data/SIGNS`.
-Run the script `build_dataset.py` which will resize the images to size `(64, 64)`. The new resized dataset will be located by default in `data/64x64_SIGNS`:
-
-```bash
-python build_dataset.py --data_dir data/SIGNS --output_dir data/64x64_SIGNS
-```
 
 
 
