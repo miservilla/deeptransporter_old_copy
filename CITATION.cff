@@ -1,0 +1,23 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite it as below."
+authors:
+- family-names: "Sahu"
+given-names: "Avinash"
+orcid: "https://orcid.org/0000-0002-2193-6276"
+- family-names: "Carli"
+given-names: "Jayne"
+orcid: "https://orcid.org/0000-0002-2568-2912"
+- family-names: "Monks"
+given-names: "Jenifer"
+orcid: "https://orcid.org/0000-0002-7990-3389"
+- family-names: "Powell"
+given-names: "Theresa"
+orcid: "https://orcid.org/0000-0001-7410-1080"
+- family-names: "Jansson"
+given-names: "Thomas"
+orcid: "https://orcid.org/0000-0002-8123-9480"
+title: "DeepTransporter"
+version: 1.0.o
+doi: 10.5281/zenodo.1234
+date-released: 2022-11-15
+url: "https://github.com/vinash85/deeptransporter"
