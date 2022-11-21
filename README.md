@@ -6,7 +6,7 @@
 ## Description 
 
 DeepTransporter is an AI predictor that employs structural features of transporters and substrates to predict substrate of any given transporter. We intend to model kinetic characterics of each substrate-transporter pair using the model. 
-The repository holds suites of the software generated for finding predicting properties of substrate. Right now, we have tested the preliminary version of DeepTransporter, which is focused on predicting hexose transporters from its structural features. 
+The repository holds suites of the software generated for finding predicting properties of substrate. Right now, we have tested the preliminary version of DeepTransporter, which is focused on predicting hexose transporters from its structural features. The models developed are deployed to the server : https://rconnect.dfci.harvard.edu/deeptransporter/
 
 
 The pytorch package is based on [tutorials](https://cs230-stanford.github.io/project-starter-code.html).
