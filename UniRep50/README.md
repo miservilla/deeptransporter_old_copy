@@ -1,6 +1,7 @@
 # Description
 Originally cloned from:
-The code of UniRep50 was obtained from EngqvistLab/UniRep50 (https://github.com/EngqvistLab/UniRep50) 
+The code of UniRep50 was obtained from EngqvistLab/UniRep50 (https://github.com/EngqvistLab/UniRep50).
+
 The author of that repository is Martin Engqvist.
 
 The code is kept for reference purpose only. As we used the code to obtain Unirep of all protiens. 
