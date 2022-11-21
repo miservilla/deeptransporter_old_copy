@@ -1,4 +1,4 @@
-# AI-predictor of  properties of transporters in the human placenta and lactating mammary epithelium.![image](https://github.com/vinash85/deeptransporter/deeptransporter.prelims.png)
+# AI-predictor of  properties of transporters in the human placenta and lactating mammary epithelium.![image](https://github.com/vinash85/deeptransporter/blob/master/deeptransporter.prelims.png)
  
 
 *Authors: Avinash Sahu
