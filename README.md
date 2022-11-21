@@ -1,4 +1,4 @@
-# AI-predictor of  properties of transporters in the human placenta and lactating mammary epithelium.![image](https://user-images.githubusercontent.com/1657400/201537558-81369f04-f208-4915-aabe-379c9a9ebaf2.png)
+# AI-predictor of  properties of transporters in the human placenta and lactating mammary epithelium.![image](https://github.com/vinash85/deeptransporter/deeptransporter.prelims.png)
  
 
 *Authors: Avinash Sahu
@@ -6,7 +6,7 @@
 ## Description 
 
 DeepTransporter is an AI predictor that employs structural features of transporters and substrates to predict substrate of any given transporter. We intend to model kinetic characterics of each substrate-transporter pair using the model. 
-The repository supports suites of the software generated for ..... 
+The repository holds suites of the software generated for finding predicting properties of substrate. Right now, we have tested the preliminary version of DeepTransporter, which is focused on predicting hexose transporters from its structural features. 
 
 
 The pytorch package is based on [tutorials](https://cs230-stanford.github.io/project-starter-code.html).
@@ -28,12 +28,8 @@ When you're done working on the project, deactivate the virtual environment with
 
 ## Quickstart (~10 min)
 
-1. __Build the dataset of size 64x64__: make sure you complete this step before training
-```bash
-python build_dataset.py --data_dir data/SIGNS --output_dir data/64x64_SIGNS
-```
 
-2. __Your first experiment__ We created a `base_model` directory for you under the `experiments` directory. It contains a file `params.json` which sets the hyperparameters for the experiment. It looks like
+1. __Your first experiment__ We created a `experiments` directory. It contains a file `params.json` which sets the hyperparameters for the experiment. It looks like
 ```json
 {
     "learning_rate": 1e-3,
@@ -42,28 +38,25 @@ python build_dataset.py --data_dir data/SIGNS --output_dir data/64x64_SIGNS
     ...
 }
 ```
+and  datasets_tsne_list.txt contains dataset information, including its location etc. that looks like 
 For every new experiment, you will need to create a new directory under `experiments` with a similar `params.json` file.
 
-3. __Train__ your experiment. Simply run
 ```
-python train.py --data_dir data/64x64_SIGNS --model_dir experiments/base_model
-```
-It will instantiate a model and train it on the training set following the hyperparameters specified in `params.json`. It will also evaluate some metrics on the validation set.
-
-4. __Your first hyperparameters search__ We created a new directory `learning_rate` in `experiments` for you. Now, run
-```
-python search_hyperparams.py --data_dir data/64x64_SIGNS --parent_dir experiments/learning_rate
-```
-It will train and evaluate a model with different values of learning rate defined in `search_hyperparams.py` and create a new directory for each experiment under `experiments/learning_rate/`.
-
-5. __Display the results__ of the hyperparameters search in a nice format
-```
-python synthesize_results.py --parent_dir experiments/learning_rate
+prefix  dataset_type    train_optimizer_mask    data_dir        tsne    types   data_augmentation
+""      "tcga"  "[1,1,1]"       "../data/deeptransporter/glucose_classifier_pca50/"     1 ['train','val']  [0,0]
 ```
 
-6. __Evaluation on the test set__ Once you've run many experiments and selected your best model and hyperparameters based on the performance on the validation set, you can finally evaluate the performance of your model on the test set. Run
+
+2. __Train__ your experiment. Simply run
 ```
-python evaluate.py --data_dir data/64x64_SIGNS --model_dir experiments/base_model
+python train.py  --data_dir  ./experiments/datasets_tsne_list.txt --model_dir ./config/params.json 
+```
+It will instantiate a model and train it on the training set following the hyperparameters specified in `params.json`. It will also evaluate some metrics on the validation set. It will store the results in  ./tensorboardLog/outputdir.  Every train is run a different time-tagged outputdir is created. E.g. 20221113-141311 was created when I run last time.
+
+
+3. __Evaluation on the test set__ Once you've run many experiments and selected your best model and hyperparameters based on the performance on the validation set, you can finally evaluate the performance of your model on the test set. Run
+```
+python evaluate.py  --data_dir  ./datasets_test_list.txt --model_dir ./tensorboardLog/20221113-141311/. --restore_file ./tensorboardLog/20221113-141311/epoch-20.pth.tar  --output_dir ./tensorboardLog/20221113-141311/eval_dir
 ```
 
 
@@ -74,10 +67,6 @@ We recommend reading through `train.py` to get a high-level overview of the trai
 - loading the training and validation data
 - creating the model, loss_fn and metrics
 - training the model for a given number of epochs by calling `train_and_evaluate(...)`
-
-You can then have a look at `data_loader.py` to understand:
-- how jpg images are loaded and transformed to torch Tensors
-- how the `data_iterator` creates a batch of data and labels and pads sentences
 
 Once you get the high-level idea, depending on your dataset, you might want to modify
 - `model/net.py` to change the neural network, loss function and metrics
