@@ -38,12 +38,13 @@ When you're done working on the project, deactivate the virtual environment with
     ...
 }
 ```
-and  datasets_tsne_list.txt contains dataset information, including its location etc. that looks like 
 For every new experiment, you will need to create a new directory under `experiments` with a similar `params.json` file.
+ datasets_tsne_list.txt contains dataset information, including its location etc. that looks like 
+
 
 ```
 prefix  dataset_type    train_optimizer_mask    data_dir        tsne    types   data_augmentation
-""      "tcga"  "[1,1,1]"       "../data/deeptransporter/glucose_classifier_pca50/"     1 ['train','val']  [0,0]
+""      "tcga"  "[1,1,1]"       "./experiments/"     1 ['train','val']  [0,0]
 ```
 
 
